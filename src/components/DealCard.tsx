@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Tag, Package, Star, Bookmark } from "lucide-react";
+import { Tag, Package, Star, Bookmark, ExternalLink } from "lucide-react";
 
 interface DealCardProps {
   title: string;
@@ -22,71 +22,62 @@ const DealCard: React.FC<DealCardProps> = ({
   id = "1"
 }) => {
   return (
-    <Card className="twello-card overflow-hidden relative group">
-      {/* Save Badge */}
-      <div className="absolute top-4 right-4 z-10">
-        <Badge className="bg-white text-[#0F172A] hover:bg-gray-100 cursor-pointer shadow-sm">
-          <Bookmark className="h-3 w-3 mr-1" />
-          Save
-        </Badge>
+    <Card className="overflow-hidden bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-all duration-200">
+      {/* Deal Header with Discount Badge */}
+      <div className="relative">
+        <div className="bg-gradient-to-r from-orange-400 to-red-500 text-white p-6 flex flex-col justify-center">
+          <div className="text-2xl font-bold">40% OFF</div>
+          <div className="text-sm">Limited Time</div>
+        </div>
+        
+        {/* Save Button */}
+        <div className="absolute top-4 right-4 flex space-x-2">
+          <button className="bg-white rounded-full p-1.5 shadow-sm hover:shadow-md transition-shadow">
+            <Bookmark className="h-4 w-4 text-gray-600" />
+          </button>
+        </div>
       </div>
       
       <div className="p-6">
-        {/* Image/Icon Section */}
-        <div className="h-32 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg flex items-center justify-center mb-4 transition-all duration-300">
-          <div className="flex flex-col items-center justify-center text-gray-500">
-            <Package size={36} strokeWidth={1.5} />
-            <div className="mt-2 text-xs font-medium">{category}</div>
-          </div>
-        </div>
-        
-        {/* Content */}
-        <div className="space-y-3">
-          <h3 className="font-semibold text-xl text-[#0F172A] line-clamp-2">
-            {title}
-          </h3>
-          
-          {/* Rating */}
-          <div className="flex items-center gap-2">
-            <div className="flex">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} size={12} className="text-yellow-400" fill="#FBBF24" />
-              ))}
-            </div>
-            <span className="text-xs text-gray-500 font-medium">5.0 (24)</span>
-          </div>
-          
-          <p className="text-sm text-gray-600 line-clamp-2 leading-relaxed">
-            {description}
-          </p>
-          
-          {/* Tags */}
-          {tags.length > 0 && (
-            <div className="flex flex-wrap gap-1.5">
-              {tags.slice(0, 2).map((tag, index) => (
-                <Badge 
-                  key={index}
-                  variant="outline"
-                  className="text-xs px-2 py-1 bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100"
-                >
-                  {tag}
-                </Badge>
-              ))}
-              {tags.length > 2 && (
-                <Badge variant="outline" className="text-xs px-2 py-1 bg-gray-50 text-gray-500 border-gray-200">
-                  +{tags.length - 2}
-                </Badge>
-              )}
-            </div>
-          )}
-          
-          {/* CTA Button */}
-          <Link to={`/deals/${id}`} className="block w-full mt-4">
-            <Button className="w-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-medium py-2.5 rounded-lg transition-all duration-200">
-              View Deal
-            </Button>
+        {/* Title and Provider */}
+        <div className="mb-4">
+          <h3 className="text-xl font-bold text-[#0F172A] mb-1">{title}</h3>
+          <Link to="/networks/leadpages" className="text-[#2563EB] text-sm font-medium hover:underline">
+            Leadpages
           </Link>
         </div>
+        
+        {/* Pricing */}
+        <div className="flex items-center mb-4">
+          <span className="text-green-600 font-medium text-lg mr-2">$299</span>
+          <span className="text-gray-400 line-through text-sm">$498.33</span>
+        </div>
+        
+        {/* Description */}
+        <p className="text-gray-600 text-sm mb-4">
+          {description}
+        </p>
+        
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-200 border-0">
+            Landing Pages
+          </Badge>
+          <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-200 border-0">
+            Conversion
+          </Badge>
+          <Badge className="bg-amber-100 text-amber-800 hover:bg-amber-200 border-0">
+            Annual Deal
+          </Badge>
+        </div>
+        
+        {/* CTA Button */}
+        <Link to={`/deals/${id}`} className="block w-full">
+          <Button className="w-full bg-[#E05D37] hover:bg-[#D04D27] text-white font-medium py-2.5 rounded-lg transition-all duration-200 flex items-center justify-center">
+            View Deal
+            <ExternalLink className="h-4 w-4 ml-1" />
+          </Button>
+        </Link>
       </div>
     </Card>
   );
