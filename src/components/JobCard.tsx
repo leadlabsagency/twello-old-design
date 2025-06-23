@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Heart, MapPin, Clock, DollarSign, Bookmark } from "lucide-react";
+import { Heart, MapPin, Clock, DollarSign, Bookmark, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,6 +15,9 @@ interface JobCardProps {
   salary?: string;
   jobType?: string;
   postedTime?: string;
+  level?: string;
+  rating?: number;
+  reviews?: number;
 }
 
 const JobCard: React.FC<JobCardProps> = ({
@@ -27,7 +30,10 @@ const JobCard: React.FC<JobCardProps> = ({
   location = "Portland, OR",
   salary = "$65000k - $85000k",
   jobType = "Full Time",
-  postedTime = "1 day ago"
+  postedTime = "1 day ago",
+  level = "Mid",
+  rating = 4.8,
+  reviews = 127
 }) => {
   return (
     <Card className="overflow-hidden bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-all duration-200">
@@ -36,7 +42,7 @@ const JobCard: React.FC<JobCardProps> = ({
         <div className="flex justify-between items-start mb-3">
           <h3 className="text-xl font-bold text-[#0F172A]">{title}</h3>
           <div className="flex space-x-2">
-            <Badge className="bg-blue-100 text-blue-700 border-0">Mid</Badge>
+            <Badge className="bg-blue-100 text-blue-700 border-0">{level}</Badge>
             <Badge className="bg-gray-100 text-gray-700 border-0">{jobType}</Badge>
           </div>
         </div>
@@ -84,7 +90,7 @@ const JobCard: React.FC<JobCardProps> = ({
             <span className="text-green-600 font-medium">{salary}</span>
             <div className="flex items-center ml-3">
               <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
-              <span className="text-gray-600 text-sm ml-1">4.8 (127 reviews)</span>
+              <span className="text-gray-600 text-sm ml-1">{rating} ({reviews} reviews)</span>
             </div>
           </div>
           

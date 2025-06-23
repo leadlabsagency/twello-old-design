@@ -1,4 +1,3 @@
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import DealCard from '@/components/DealCard';
@@ -62,24 +61,33 @@ const Deals = () => {
   const allDeals = [
     {
       id: "1",
-      title: 'Cloud Storage 2TB',
-      category: 'Cloud Services',
-      description: 'Unlimited storage for your data.',
-      tags: ['Cloud Service'],
+      title: 'Leadpages Pro Annual',
+      category: 'Leadpages',
+      description: 'Get 40% off Leadpages Pro annual subscription. Create high-converting landing pages, pop-ups, and alert bars. Perfect for affiliate marketers looking to boost conversions.',
+      tags: ['Landing Pages'],
+      salePrice: "$299",
+      originalPrice: "$498.33",
+      discount: "40% OFF"
     },
     {
       id: "2",
       title: 'Email Automation Pro',
       category: 'Marketing',
-      description: 'Automate campaigns effortlessly.',
+      description: 'Automate campaigns effortlessly with this premium email marketing platform. Includes advanced segmentation and analytics.',
       tags: ['Marketing'],
+      salePrice: "$199",
+      originalPrice: "$399",
+      discount: "50% OFF"
     },
     {
       id: "3",
       title: 'Pro SEO Tool',
       category: 'SEO',
-      description: 'SEO tool for agencies.',
+      description: 'Complete SEO toolkit for agencies and professionals. Includes keyword research, rank tracking, and competitor analysis.',
       tags: ['SEO'],
+      salePrice: "$149",
+      originalPrice: "$299",
+      discount: "50% OFF"
     },
     {
       id: "4",
@@ -87,62 +95,89 @@ const Deals = () => {
       category: 'Development',
       description: 'Get IPs with IP quality, range of free trials, and 24/7 tech support with your subscription.',
       tags: ['Proxy', 'Development'],
+      salePrice: "$75",
+      originalPrice: "$150",
+      discount: "50% OFF"
     },
     {
       id: "5",
       title: 'Analytics Dashboard Pro',
       category: 'Analytics',
-      description: 'Track and visualize your marketing performance with advanced dashboards.',
+      description: 'Track and visualize your marketing performance with advanced dashboards and custom reporting features.',
       tags: ['Analytics'],
+      salePrice: "$89",
+      originalPrice: "$179",
+      discount: "50% OFF"
     },
     {
       id: "6",
       title: 'Social Media Management Suite',
       category: 'Social Media',
-      description: 'All-in-one platform to schedule, post, and monitor your social media presence.',
+      description: 'All-in-one platform to schedule, post, and monitor your social media presence across all major platforms.',
       tags: ['Social Media'],
+      salePrice: "$129",
+      originalPrice: "$249",
+      discount: "48% OFF"
     },
     {
       id: "7",
       title: 'CRM Software Pro',
       category: 'Business',
-      description: 'Manage customer relationships and sales pipelines effectively.',
+      description: 'Manage customer relationships and sales pipelines effectively with this comprehensive CRM solution.',
       tags: ['CRM', 'Business'],
+      salePrice: "$199",
+      originalPrice: "$399",
+      discount: "50% OFF"
     },
     {
       id: "8",
       title: 'Video Editing Suite',
       category: 'Creative',
-      description: 'Professional video editing tools for content creators.',
+      description: 'Professional video editing tools for content creators with templates optimized for marketing videos.',
       tags: ['Video', 'Creative'],
+      salePrice: "$149",
+      originalPrice: "$299",
+      discount: "50% OFF"
     },
     {
       id: "9",
       title: 'Project Management Tool',
       category: 'Productivity',
-      description: 'Collaborate and manage projects with advanced planning features.',
+      description: 'Collaborate and manage projects with advanced planning features and resource allocation tools.',
       tags: ['Project Management'],
+      salePrice: "$99",
+      originalPrice: "$199",
+      discount: "50% OFF"
     },
     {
       id: "10",
       title: 'Email Marketing Platform',
       category: 'Marketing',
-      description: 'Create and send professional email campaigns with automation.',
+      description: 'Create and send professional email campaigns with automation and detailed performance analytics.',
       tags: ['Email', 'Marketing'],
+      salePrice: "$79",
+      originalPrice: "$159",
+      discount: "50% OFF"
     },
     {
       id: "11",
       title: 'Web Hosting Premium',
       category: 'Hosting',
-      description: 'Fast and reliable web hosting with 99.9% uptime guarantee.',
+      description: 'Fast and reliable web hosting with 99.9% uptime guarantee and free SSL certificates.',
       tags: ['Hosting', 'Web'],
+      salePrice: "$59",
+      originalPrice: "$119",
+      discount: "50% OFF"
     },
     {
       id: "12",
       title: 'Design Software Pro',
       category: 'Design',
-      description: 'Professional design tools for graphics and user interfaces.',
+      description: 'Professional design tools for graphics and user interfaces with templates for marketing materials.',
       tags: ['Design', 'Graphics'],
+      salePrice: "$149",
+      originalPrice: "$299",
+      discount: "50% OFF"
     },
   ];
 
@@ -326,14 +361,14 @@ const Deals = () => {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-[#F8FAFC]">
       <Navbar />
       
       {/* Header Section - Updated padding to ensure content is visible */}
       <section className="pt-32 py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center py-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[#0F172A] leading-tight mb-6">
               Smart software savings for affiliate marketers
             </h1>
             
@@ -350,7 +385,7 @@ const Deals = () => {
       </section>
       
       {/* Content Section with Sidebar Filter */}
-      <section id="deals-section" className="py-16" style={{backgroundColor: '#F9FAFB'}}>
+      <section id="deals-section" className="py-16" style={{backgroundColor: '#F8FAFC'}}>
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex gap-6">
             {/* Desktop Sidebar Filters */}
@@ -399,10 +434,10 @@ const Deals = () => {
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2">
                   <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center">
-                    <Star className="h-6 w-6 text-blue-600" />
+                    <Star className="h-6 w-6 text-[#2563EB]" />
                   </div>
                   <div>
-                    <h2 className="text-xl font-semibold text-gray-900">All Deals</h2>
+                    <h2 className="text-xl font-semibold text-[#0F172A]">All Deals</h2>
                     <p className="text-gray-600">Browse our curated collection of deals ({allDeals.length} total)</p>
                   </div>
                 </div>
@@ -421,14 +456,24 @@ const Deals = () => {
                 </Select>
               </div>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 mb-8">
+              <div className="space-y-6">
                 {currentDeals.map((deal) => (
-                  <DealCard key={deal.id} {...deal} />
+                  <DealCard 
+                    key={deal.id} 
+                    id={deal.id}
+                    title={deal.title} 
+                    category={deal.category} 
+                    description={deal.description} 
+                    tags={deal.tags}
+                    salePrice={deal.salePrice}
+                    originalPrice={deal.originalPrice}
+                    discount={deal.discount}
+                  />
                 ))}
               </div>
 
               {/* Pagination */}
-              <div className="flex justify-center">
+              <div className="flex justify-center mt-8">
                 <Pagination>
                   <PaginationContent>
                     <PaginationItem>

@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -68,14 +67,15 @@ const Jobs = () => {
   const jobs = [
     {
       id: "1",
-      title: 'Senior Affiliate Manager',
-      company: 'AdTech Solutions',
-      location: 'Remote',
+      title: 'Affiliate Program Manager',
+      company: 'AffiliateMax',
+      location: 'Portland, OR',
       type: 'Full-time',
-      salary: '$80,000 - $120,000',
-      description: 'Lead affiliate partnerships and drive revenue growth through strategic partnerships and performance optimization.',
+      salary: '$65000k - $85000k',
+      description: 'Seeking an Affiliate Program Manager to oversee our affiliate program, recruit new partners, optimize commission structures, and drive program growth for our e-commerce brand.',
       tags: ['Affiliate Marketing', 'Management'],
-      posted: '2 days ago'
+      posted: '1 day ago',
+      level: 'Mid'
     },
     {
       id: "2",
@@ -86,7 +86,8 @@ const Jobs = () => {
       salary: '$60,000 - $80,000',
       description: 'Execute digital marketing campaigns across multiple channels including PPC, social media, and content marketing.',
       tags: ['Digital Marketing', 'PPC'],
-      posted: '1 week ago'
+      posted: '1 week ago',
+      level: 'Entry'
     },
     {
       id: "3",
@@ -97,7 +98,8 @@ const Jobs = () => {
       salary: '$70,000 - $90,000',
       description: 'Analyze campaign performance and optimize conversion rates using advanced analytics and testing methodologies.',
       tags: ['Analytics', 'Performance'],
-      posted: '3 days ago'
+      posted: '3 days ago',
+      level: 'Mid'
     },
     {
       id: "4",
@@ -108,7 +110,8 @@ const Jobs = () => {
       salary: '$50,000 - $65,000',
       description: 'Coordinate affiliate relationships and manage partnerships to maximize network performance and revenue.',
       tags: ['Affiliate Networks', 'Coordination'],
-      posted: '5 days ago'
+      posted: '5 days ago',
+      level: 'Entry'
     },
     {
       id: "5",
@@ -119,7 +122,8 @@ const Jobs = () => {
       salary: '$65,000 - $85,000',
       description: 'Optimize conversion rates through A/B testing, user experience analysis, and data-driven recommendations.',
       tags: ['CRO', 'Testing'],
-      posted: '1 week ago'
+      posted: '1 week ago',
+      level: 'Mid'
     },
     {
       id: "6",
@@ -130,7 +134,8 @@ const Jobs = () => {
       salary: '$55,000 - $75,000',
       description: 'Develop and execute comprehensive email marketing strategies to drive engagement and conversions.',
       tags: ['Email Marketing', 'Strategy'],
-      posted: '4 days ago'
+      posted: '4 days ago',
+      level: 'Mid'
     },
     {
       id: "7",
@@ -141,7 +146,8 @@ const Jobs = () => {
       salary: '$60,000 - $75,000',
       description: 'Develop engaging content across multiple channels to drive traffic and conversions.',
       tags: ['Content Marketing', 'SEO'],
-      posted: '3 days ago'
+      posted: '3 days ago',
+      level: 'Mid'
     },
     {
       id: "8",
@@ -152,7 +158,8 @@ const Jobs = () => {
       salary: '$40,000 - $50,000',
       description: 'Assist in managing affiliate relationships and optimize campaign performance.',
       tags: ['Affiliate Marketing', 'Coordination'],
-      posted: '1 day ago'
+      posted: '1 day ago',
+      level: 'Entry'
     },
     {
       id: "9",
@@ -163,7 +170,8 @@ const Jobs = () => {
       salary: '$65,000 - $85,000',
       description: 'Optimize website content and structure to improve search engine rankings and drive organic traffic.',
       tags: ['SEO', 'Analytics'],
-      posted: '6 days ago'
+      posted: '6 days ago',
+      level: 'Mid'
     }
   ];
 
@@ -331,14 +339,14 @@ const Jobs = () => {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-[#F8FAFC]">
       <Navbar />
       
       {/* Header Section */}
       <section className="pt-32 pb-8 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-8">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#0F172A] leading-tight mb-4">
               Find your next affiliate marketing opportunity
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
@@ -401,8 +409,8 @@ const Jobs = () => {
               {/* Results Header */}
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2">
-                  <Briefcase className="h-5 w-5 text-gray-600" />
-                  <h2 className="text-xl font-semibold text-gray-900">
+                  <Briefcase className="h-5 w-5 text-[#2563EB]" />
+                  <h2 className="text-xl font-semibold text-[#0F172A]">
                     {jobs.length} jobs found
                   </h2>
                 </div>
@@ -420,56 +428,20 @@ const Jobs = () => {
               </div>
               
               {/* Job Listings */}
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {currentJobs.map((job) => (
-                  <Card key={job.id} className="p-6 hover:shadow-md transition-shadow bg-white">
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex items-start gap-3 mb-3">
-                          <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <Briefcase className="h-6 w-6 text-blue-600" />
-                          </div>
-                          <div className="flex-1">
-                            <Link to={`/jobs/${job.id}`} className="block hover:text-blue-600 transition-colors">
-                              <h3 className="text-lg font-semibold text-gray-900 mb-1">{job.title}</h3>
-                            </Link>
-                            <p className="text-gray-600 mb-2">{job.company}</p>
-                            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
-                              <div className="flex items-center gap-1">
-                                <MapPin className="h-4 w-4" />
-                                {job.location}
-                              </div>
-                              <div className="flex items-center gap-1">
-                                <Clock className="h-4 w-4" />
-                                {job.type}
-                              </div>
-                              <div className="flex items-center gap-1">
-                                <DollarSign className="h-4 w-4" />
-                                {job.salary}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        <p className="text-gray-700 mb-3 leading-relaxed">{job.description}</p>
-                        
-                        <div className="flex flex-wrap gap-2">
-                          {job.tags.map((tag, index) => (
-                            <span key={index} className="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      <div className="flex flex-col items-end gap-2">
-                        <span className="text-sm text-gray-500">{job.posted}</span>
-                        <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6">
-                          Apply Now
-                        </Button>
-                      </div>
-                    </div>
-                  </Card>
+                  <JobCard 
+                    key={job.id}
+                    id={job.id}
+                    title={job.title}
+                    company={job.company}
+                    description={job.description}
+                    location={job.location}
+                    salary={job.salary}
+                    jobType={job.type}
+                    postedTime={job.posted}
+                    level={job.level}
+                  />
                 ))}
               </div>
               
