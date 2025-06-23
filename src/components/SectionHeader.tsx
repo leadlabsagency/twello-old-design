@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 
 interface SectionHeaderProps {
@@ -14,10 +13,10 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
   viewAllLink,
   coloredTitle = false 
 }) => {
-  const titleClasses = coloredTitle ? 'gradient-text' : '';
+  const titleClasses = coloredTitle ? 'text-[#2563EB]' : '';
 
   return (
-    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
       <div>
         <h2 className={`text-3xl font-bold ${titleClasses}`}>{title}</h2>
         {subtitle && <p className="text-gray-600 mt-1">{subtitle}</p>}
@@ -26,7 +25,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
       {viewAllLink && (
         <Link 
           to={viewAllLink} 
-          className="text-twello-blue hover:underline mt-2 md:mt-0 flex items-center"
+          className="text-[#2563EB] hover:underline mt-2 md:mt-0 flex items-center"
         >
           View all
           <svg 

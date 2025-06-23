@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, User, Settings, X, LogOut, ChevronDown, LayoutDashboard } from 'lucide-react';
@@ -34,18 +33,18 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white py-4 px-4 md:px-8 shadow-sm">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <h1 className="text-2xl font-bold">Twello</h1>
+          <h1 className="text-2xl font-bold text-[#0F172A]">Twello</h1>
         </Link>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6">
-          <Link to="/deals" className="hover:text-twello-blue transition-colors">Deals</Link>
-          <Link to="/jobs" className="hover:text-twello-blue transition-colors">Jobs</Link>
-          <Link to="/networks" className="hover:text-twello-blue transition-colors">Networks</Link>
-          <Link to="/events" className="hover:text-twello-blue transition-colors">Events</Link>
-          <Link to="/offers" className="hover:text-twello-blue transition-colors">Offers</Link>
+        <div className="hidden md:flex items-center space-x-8">
+          <Link to="/deals" className="text-[#0F172A] hover:text-[#2563EB] transition-colors">Deals</Link>
+          <Link to="/jobs" className="text-[#0F172A] hover:text-[#2563EB] transition-colors">Jobs</Link>
+          <Link to="/networks" className="text-[#0F172A] hover:text-[#2563EB] transition-colors">Networks</Link>
+          <Link to="/events" className="text-[#0F172A] hover:text-[#2563EB] transition-colors">Events</Link>
+          <Link to="/offers" className="text-[#0F172A] hover:text-[#2563EB] transition-colors">Offers</Link>
           {isAdmin && (
-            <Link to="/admin" className="hover:text-twello-blue transition-colors">Admin</Link>
+            <Link to="/admin" className="text-[#0F172A] hover:text-[#2563EB] transition-colors">Admin</Link>
           )}
           
           {user ? (
@@ -53,7 +52,7 @@ const Navbar = () => {
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="flex items-center gap-2 px-3 rounded-full hover:bg-gray-100">
                   <Avatar className="h-8 w-8 border border-gray-200">
-                    <AvatarFallback className="bg-blue-600 text-white">
+                    <AvatarFallback className="bg-[#2563EB] text-white">
                       {userInitials}
                     </AvatarFallback>
                   </Avatar>
@@ -166,7 +165,7 @@ const Navbar = () => {
                   <div className="p-4 border-t">
                     <div className="flex items-center gap-3 mb-4">
                       <Avatar className="h-10 w-10 border border-gray-200">
-                        <AvatarFallback className="bg-blue-600 text-white">
+                        <AvatarFallback className="bg-[#2563EB] text-white">
                           {userInitials}
                         </AvatarFallback>
                       </Avatar>
@@ -192,7 +191,7 @@ const Navbar = () => {
                       </Button>
                     </Link>
                     <Link to="/signup" className="w-full">
-                      <Button className="w-full bg-blue-600 text-white hover:bg-blue-700 text-base py-6">
+                      <Button className="w-full bg-[#2563EB] text-white hover:bg-[#1D4ED8] text-base py-6">
                         Sign up free
                       </Button>
                     </Link>

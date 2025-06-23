@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { LucideIcon } from 'lucide-react';
@@ -14,16 +13,16 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   icon: Icon, 
   name, 
   count, 
-  color = 'bg-gray-100' 
+  color = 'bg-blue-100' 
 }) => {
   return (
     <Link to={`/categories/${name.toLowerCase()}`}>
-      <div className="bg-white border border-gray-100 rounded-xl p-6 transition-all duration-300 hover:shadow-md hover:-translate-y-1 flex flex-col items-center text-center">
-        <div className={`${color} w-16 h-16 rounded-full flex items-center justify-center mb-4`}>
-          <Icon className="h-8 w-8 text-gray-700" />
+      <div className="category-card">
+        <div className={`category-icon ${color}`}>
+          <Icon className="h-7 w-7 text-[#2563EB]" />
         </div>
-        <h3 className="font-semibold text-lg mb-1">{name}</h3>
-        <p className="text-sm text-gray-500">{count} tools</p>
+        <h3 className="font-semibold text-lg mb-1 text-[#0F172A]">{name}</h3>
+        <p className="text-sm text-gray-500">{count} listings</p>
       </div>
     </Link>
   );

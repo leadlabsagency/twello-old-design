@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -22,7 +21,7 @@ const NetworkCard: React.FC<NetworkCardProps> = ({
   reviews
 }) => {
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+    <Card className="twello-card overflow-hidden">
       <div className="p-6">
         <div className="flex items-start mb-4">
           <div className="h-16 w-16 bg-gray-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
@@ -41,7 +40,7 @@ const NetworkCard: React.FC<NetworkCardProps> = ({
             )}
           </div>
           <div className="flex-1">
-            <h3 className="font-semibold text-xl mb-2">{name}</h3>
+            <h3 className="font-semibold text-xl mb-2 text-[#0F172A]">{name}</h3>
             <p className="text-sm text-gray-600 line-clamp-3">{description}</p>
           </div>
         </div>
@@ -62,7 +61,7 @@ const NetworkCard: React.FC<NetworkCardProps> = ({
         )}
         
         <Link to={`/networks/${id}`}>
-          <Button variant="outline" className="w-full mt-4">View Details</Button>
+          <Button variant="outline" className="w-full mt-4 border-gray-200 hover:border-[#2563EB] hover:text-[#2563EB]">View Details</Button>
         </Link>
       </div>
     </Card>

@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -28,11 +27,11 @@ const OfferCard: React.FC<OfferCardProps> = ({
   verified = true
 }) => {
   return (
-    <Card className="overflow-hidden card-hover bg-white border border-gray-200 rounded-xl p-6">
+    <Card className="twello-card p-6">
       <div className="space-y-4">
         {/* Header */}
         <div>
-          <h3 className="font-bold text-xl text-gray-900 mb-2">{title}</h3>
+          <h3 className="font-bold text-xl text-[#0F172A] mb-2">{title}</h3>
           <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
         </div>
         
@@ -57,7 +56,7 @@ const OfferCard: React.FC<OfferCardProps> = ({
         {tags.length > 0 && (
           <div className="flex flex-wrap gap-2">
             {type && (
-              <Badge variant="secondary" className="text-xs">
+              <Badge variant="secondary" className="text-xs bg-blue-50 text-blue-700 hover:bg-blue-100">
                 {type}
               </Badge>
             )}
@@ -85,7 +84,7 @@ const OfferCard: React.FC<OfferCardProps> = ({
           <Link to={`/offers/${id}`}>
             <Button 
               variant="outline" 
-              className="w-full border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-medium py-2 px-6 rounded-xl transition-colors"
+              className="w-full border-2 border-[#0F172A] text-[#0F172A] hover:bg-[#0F172A] hover:text-white font-medium py-2 px-6 rounded-xl transition-colors"
             >
               View Details
             </Button>

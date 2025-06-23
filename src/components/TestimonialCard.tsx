@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Check } from 'lucide-react';
@@ -20,7 +19,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   verified = false
 }) => {
   return (
-    <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
+    <Card className="border-0 shadow-sm hover:shadow-md transition-shadow rounded-xl">
       <CardContent className="p-6">
         <div className="mb-4">
           {/* Quote icon */}
@@ -44,15 +43,15 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
         <div className="flex items-center">
           <Avatar className="h-10 w-10 mr-4">
             <AvatarImage src={avatar} alt={author} />
-            <AvatarFallback>{author.charAt(0)}</AvatarFallback>
+            <AvatarFallback className="bg-[#2563EB] text-white">{author.charAt(0)}</AvatarFallback>
           </Avatar>
           <div className="flex items-center">
             <div>
-              <h4 className="font-medium text-gray-900">{author}</h4>
+              <h4 className="font-medium text-[#0F172A]">{author}</h4>
               <p className="text-xs text-gray-500">{position}</p>
             </div>
             {verified && (
-              <div className="ml-2 bg-blue-600 text-white rounded-full p-0.5" title="Verified Testimonial">
+              <div className="ml-2 bg-[#2563EB] text-white rounded-full p-0.5" title="Verified Testimonial">
                 <Check className="h-3 w-3" />
               </div>
             )}

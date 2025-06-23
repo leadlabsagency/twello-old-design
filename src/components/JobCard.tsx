@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -22,11 +21,11 @@ const JobCard: React.FC<JobCardProps> = ({
   id = "1" // Default ID if none provided
 }) => {
   return (
-    <Card className="overflow-hidden card-hover">
+    <Card className="twello-card overflow-hidden">
       <div className="p-6">
         <div className="flex justify-between">
           <div className="flex">
-            <div className="h-12 w-12 bg-gray-100 rounded-md flex items-center justify-center mr-4">
+            <div className="h-12 w-12 bg-gray-100 rounded-lg flex items-center justify-center mr-4">
               {logo ? (
                 <img 
                   src={logo} 
@@ -42,11 +41,11 @@ const JobCard: React.FC<JobCardProps> = ({
               )}
             </div>
             <div>
-              <h3 className="font-semibold text-lg">{title}</h3>
+              <h3 className="font-semibold text-lg text-[#0F172A]">{title}</h3>
               <div className="flex items-center mt-1">
                 <span className="text-sm text-gray-600">{company}</span>
                 {companyTag && (
-                  <span className="ml-2 px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded">
+                  <span className="ml-2 px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded-full">
                     {companyTag}
                   </span>
                 )}
@@ -61,7 +60,7 @@ const JobCard: React.FC<JobCardProps> = ({
         <p className="text-sm text-gray-600 my-4 line-clamp-2">{description}</p>
         
         <Link to={`/jobs/${id}`}>
-          <Button variant="default" size="sm">View Details</Button>
+          <Button variant="default" size="sm" className="bg-[#2563EB] hover:bg-[#1D4ED8]">View Details</Button>
         </Link>
       </div>
     </Card>

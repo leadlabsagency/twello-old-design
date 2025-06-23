@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -21,7 +20,7 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
-				display: ['Plus Jakarta Sans', 'sans-serif'],
+				display: ['Inter', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -68,10 +67,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				twello: {
-					blue: '#4169E1',
-					lightblue: '#6495ED',
-					purple: '#8B5CF6',
-					lightpurple: '#9B87F5',
+					blue: '#2563EB',
+					lightblue: '#3B82F6',
+					purple: '#4F46E5',
+					lightpurple: '#818CF8',
 				},
 				wealth: {
 					blue: '#1345e6',
@@ -122,6 +121,10 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out'
+			},
+			boxShadow: {
+				'card': '0px 4px 25px rgba(0, 0, 0, 0.05)',
+				'card-hover': '0px 8px 30px rgba(0, 0, 0, 0.08)'
 			}
 		}
 	},

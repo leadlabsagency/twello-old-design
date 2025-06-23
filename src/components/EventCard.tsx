@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { MapPin, Heart, Share, Bookmark } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -28,7 +27,7 @@ const EventCard: React.FC<EventCardProps> = ({
   city
 }) => {
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 bg-white rounded-xl border border-gray-100">
+    <Card className="twello-card overflow-hidden hover:shadow-lg transition-all duration-300">
       {/* Image Section */}
       <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200">
         {image ? (
@@ -48,7 +47,7 @@ const EventCard: React.FC<EventCardProps> = ({
           <span className={`px-3 py-1.5 rounded-lg text-xs font-semibold ${
             price === 'FREE' 
               ? 'bg-green-500 text-white' 
-              : 'bg-white text-gray-900 shadow-sm'
+              : 'bg-white text-[#0F172A] shadow-sm'
           }`}>
             {price}
           </span>
@@ -70,15 +69,15 @@ const EventCard: React.FC<EventCardProps> = ({
         {/* Date and Title */}
         <div className="flex items-start gap-4 mb-3">
           <div className="flex-shrink-0">
-            <div className="text-blue-600 text-xs font-semibold tracking-wide uppercase">
+            <div className="text-[#2563EB] text-xs font-semibold tracking-wide uppercase">
               {date.split(' ')[0]}
             </div>
-            <div className="text-2xl font-bold text-gray-900 leading-none">
+            <div className="text-2xl font-bold text-[#0F172A] leading-none">
               {date.split(' ')[1]}
             </div>
           </div>
           <div className="flex-1 min-w-0">
-            <h3 className="font-semibold text-lg text-gray-900 leading-tight mb-1 line-clamp-2">
+            <h3 className="font-semibold text-lg text-[#0F172A] leading-tight mb-1 line-clamp-2">
               {title}
             </h3>
           </div>
@@ -107,7 +106,7 @@ const EventCard: React.FC<EventCardProps> = ({
             </span>
           )}
           <Link to={`/events/${id}`} className="ml-auto">
-            <Button variant="outline" size="sm" className="text-xs px-4">
+            <Button variant="outline" size="sm" className="text-xs px-4 border-gray-200 hover:border-[#2563EB] hover:text-[#2563EB]">
               View Details
             </Button>
           </Link>
